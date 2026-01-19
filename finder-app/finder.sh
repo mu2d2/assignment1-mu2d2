@@ -30,6 +30,7 @@ else
     exit 1
 fi
 echo "searching "$FILESDIR" for "$SEARCHSTR""
-FILECOUNT=$(ls -1 "$FILESDIR" | wc -l) #gets file & subdirectory count in current directory
+#the flags were found with reference to https://man7.org/linux/man-pages/man1/ls.1.html
+FILECOUNT=$(ls -1q "$FILESDIR" | wc -l) #gets file & subdirectory count in current directory
 LINECOUNT=$(grep -r "$SEARCHSTR" "$FILESDIR" | wc -l) #gets mathcing line count in current directory
-echo "Number of files are $FILECOUNT and the number of matching lines are $LINECOUNT" 
+echo "The number of files are $FILECOUNT and the number of matching lines are $LINECOUNT" 
