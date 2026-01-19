@@ -19,12 +19,11 @@ then
     exit 1
 fi
 
-echo "Two arguments passed in."
 
 #checks if filedirectory is a valid directory
 if [ -d "$FILESDIR" ]
 then
-    echo "Directory is valid"
+    true
 else
     echo "Error: Directory not valid" >&2
     exit 1
